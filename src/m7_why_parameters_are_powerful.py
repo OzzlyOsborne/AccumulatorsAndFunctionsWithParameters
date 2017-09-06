@@ -94,7 +94,7 @@ def draw_circles():
 # ----------------------------------------------------------------------
 
 
-def better_draw_cirlces(n):
+def better_draw_circles(n):
     #Initial radii is n, increases by n amount per radii
     window = rg.RoseWindow(400, 400)
 
@@ -110,8 +110,8 @@ def better_draw_cirlces(n):
 
 def test_better_draw_circles():
     #Tests better_draw_cirlces
-    better_draw_cirlces(10)
-    better_draw_cirlces(3)
+    better_draw_circles(10)
+    better_draw_circles(3)
 
 # ----------------------------------------------------------------------
 # TODO: 3.
