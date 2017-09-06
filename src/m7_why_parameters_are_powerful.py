@@ -2,17 +2,17 @@
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Joshua Osborne.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    test_draw_circles()
+    #test_draw_circles()
     # Un-comment the next lines when you are ready to use them.
-    # test_better_draw_circles()
+    #test_better_draw_circles()
     # test_even_better_draw_circles()
 
 
@@ -31,13 +31,13 @@ def test_draw_circles():
     """ Tests the   draw_circles   function. """
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch this function - it has no TODO in it.
+    #   Do NOT touch this function - it has no TO_DO in it.
     # ------------------------------------------------------------------
     print()
     print('--------------------------------------------------')
     print('Testing  draw_circles:  See graphics window')
     print('--------------------------------------------------')
-    draw_circles()
+    #draw_circles()
 
 
 def draw_circles():
@@ -51,7 +51,7 @@ def draw_circles():
     """
     # ------------------------------------------------------------------
     # Students:
-    #   Do NOT touch this function - it has no TODO in it.
+    #   Do NOT touch this function - it has no TO_DO in it.
     # ------------------------------------------------------------------
     window = rg.RoseWindow(400, 400)
 
@@ -94,6 +94,25 @@ def draw_circles():
 # ----------------------------------------------------------------------
 
 
+def better_draw_cirlces(n):
+    #Initial radii is n, increases by n amount per radii
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(200, 200)
+    for k in range(20):
+        circle = rg.Circle(center, n + k*n)
+        print(n+k*n)
+        circle.attach_to(window)
+        window.render(0.05)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
+
+def test_better_draw_circles():
+    #Tests better_draw_cirlces
+    better_draw_cirlces(10)
+    better_draw_cirlces(3)
+
 # ----------------------------------------------------------------------
 # TODO: 3.
 #   In the previous exercise, you made a MORE POWERFUL version
@@ -122,6 +141,24 @@ def draw_circles():
 #   In testing your even_better_draw_circles function,
 #   can you make some fun pictures?
 # ----------------------------------------------------------------------
+def even_better_draw_circles(r_var,c_num,center_x,center_y,color,speed):
+    window = rg.RoseWindow(400, 400)
+
+    center = rg.Point(center_x, center_y)
+    for k in range(c_num):
+        circle = rg.Circle(center, r_var + k * r_var)
+        circle.outline_color = color
+        print(r_var + k * r_var)
+        circle.attach_to(window)
+        window.render(speed)  # Pauses for 0.05 seconds after rendering.
+
+    window.close_on_mouse_click()
+
+
+def test_even_better_draw_circles():
+    even_better_draw_circles(10,20,100,200,'green',0.01)
+    even_better_draw_circles(10, 30, 200, 200, 'teal', 0.01)
+
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
